@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "databaseConnection": {
+      "configDescription": "descDatabaseConnection",
+      "defaultConfigurable": true,
+      "type": "object",
+      "properties": {
+        "host": {
+          "type": "string",
+          "default": "localhost",
+          "configDescription": "descHost",
+          "propertyOrder": 1
+        },
+        "port": {
+          "type": "integer",
+          "default": 5432,
+          "propertyOrder": 2
+        },
+        "dbname": {
+          "type": "string",
+          "default": "postgres",
+          "propertyOrder": 3
+        },
+        "userName": {
+          "type": "string",
+          "default": "postgres",
+          "propertyOrder": 4
+        },
+        "password": {
+          "type": "string",
+          "format": "masked",
+          "propertyOrder": 5
+        },
+        "connectionTimeout": {
+          "type": "integer",
+          "minimum": 1,
+          "propertyOrder": 6,
+          "default": 10,
+          "unit": "seconds"
+        }
+      },
+      "required": [ "host", "port", "dbname", "connectionTimeout" ]
+    }
+  },
+  "required": ["databaseConnection"]
+}

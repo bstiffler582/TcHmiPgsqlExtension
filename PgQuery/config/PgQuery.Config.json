@@ -1,0 +1,50 @@
+{
+  "$schema": "ExtensionSettings.Schema.json",
+  "guid": "13defebe-227e-418f-90e2-54a1c346cfaa",
+  "version": "1.0.0.0",
+  "configVersion": "1.0.0.0",
+  "policies": [
+    "StrictPropertyValidation",
+    "StrictConfigListenerFilter"
+  ],
+  "symbols": {
+    "Results": {
+      "readValue": {
+        "function": true,
+        "readOnly": true,
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      }
+    },
+    "Query": {
+      "automap": true,
+      "hidden": false,
+      "readValue": {
+        "type": "string"
+      }
+    },
+    "Diagnostics": {
+      "readValue": {
+        "function": true,
+        "readOnly": true,
+        "type": "object",
+        "properties": {
+          "connectionState": {
+            "propertyOrder": 1,
+            "type": "string"
+          },
+          "connectionError": {
+            "propertyOrder": 2,
+            "type": "string",
+            "format": "multiline"
+          }
+        },
+        "required": [
+          "connectionState"
+        ]
+      }
+    }
+  }
+}
